@@ -26,7 +26,7 @@ namespace UnixTimeConverter.Test
 
         [Theory]
         [InlineData(JsonToken.Integer, 1355314332)]
-        [InlineData(JsonToken.String, 1355314332)]
+        [InlineData(JsonToken.String, "1355314332")]
         public void WriteJson_ValidPositiveInput_Success(JsonToken jsonTokenType, object value)
         {
             //Arrange
