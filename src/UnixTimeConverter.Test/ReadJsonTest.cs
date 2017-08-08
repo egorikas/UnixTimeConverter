@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using Moq;
 using Newtonsoft.Json;
 using Xunit;
@@ -18,28 +17,36 @@ namespace UnixTimeConverter.Test
             jsonReaderMock.SetupGet(x => x.TokenType).Returns(JsonToken.Boolean);
 
             //Act
-            var ex = Assert.Throws<ArgumentException>(() => unixTimeConverter.ReadJson(jsonReaderMock.Object, null, false, null));
+            var ex = Assert.Throws<ArgumentException>(
+                () => unixTimeConverter.ReadJson(jsonReaderMock.Object, null, false, null));
 
             //Assert
             Assert.Equal("Unexpected token parsing date. Integer or String was expected, got Boolean", ex.Message);
         }
 
         [Theory]
-        [InlineData(JsonToken.Integer, 1355314332)]
-        [InlineData(JsonToken.String, "1355314332")]
-        public void WriteJson_ValidPositiveInput_Success(JsonToken jsonTokenType, object value)
+        [MemberData(nameof(PositiveInputData))]
+        public void WriteJson_ValidPositiveInput_Success(JsonToken jsonTokenType, object input, DateTime expectedResult)
         {
             //Arrange
             var unixTimeConverter = new UnixTimeConverter();
             var jsonReaderMock = new Mock<JsonReader>();
             jsonReaderMock.SetupGet(x => x.TokenType).Returns(jsonTokenType);
-            jsonReaderMock.SetupGet(x => x.Value).Returns(value);
+            jsonReaderMock.SetupGet(x => x.Value).Returns(input);
 
             //Act
             var result = unixTimeConverter.ReadJson(jsonReaderMock.Object, null, false, null);
 
             //Assert
-            Assert.Equal(new DateTime(2012,12,12,12,12,12, DateTimeKind.Utc), result);
+            Assert.Equal(expectedResult, result);
         }
+
+
+        public static IEnumerable<object[]> PositiveInputData => new[]
+        {
+            new object[] {JsonToken.Integer, 1355314332, new DateTime(2012, 12, 12, 12, 12, 12, DateTimeKind.Utc)},
+            new object[] {JsonToken.String, "1355314332", new DateTime(2012, 12, 12, 12, 12, 12, DateTimeKind.Utc)},
+            new object[] {JsonToken.Integer, -631108068, new DateTime(1950, 1, 1, 12, 12, 12, DateTimeKind.Utc)}
+        };
     }
 }
