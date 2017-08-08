@@ -19,10 +19,12 @@ namespace UnixTimeConverter
             writer.WriteValue(ticks);
         }
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue,
+            JsonSerializer serializer)
         {
             if (reader.TokenType != JsonToken.Integer && reader.TokenType != JsonToken.String)
-                throw new ArgumentException($"Unexpected token parsing date. Integer or String was expected, got {reader.TokenType}");
+                throw new ArgumentException(
+                    $"Unexpected token parsing date. Integer or String was expected, got {reader.TokenType}");
 
             var ticks = Convert.ToInt64(reader.Value);
 

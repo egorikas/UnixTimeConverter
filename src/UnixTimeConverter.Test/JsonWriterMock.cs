@@ -3,7 +3,7 @@ using Newtonsoft.Json;
 
 namespace UnixTimeConverter.Test
 {
-    class JsonWriterMock : JsonWriter
+    public class JsonWriterMock : JsonWriter
     {
         public long FetchedData { get; set; }
 
