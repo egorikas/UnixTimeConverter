@@ -1,4 +1,6 @@
 using System;
+using Moq;
+using Newtonsoft.Json;
 using Xunit;
 
 namespace UnixTimeConverter.Test
@@ -23,13 +25,13 @@ namespace UnixTimeConverter.Test
         {
             //Arrange
             var unixTimeConverter = new UnixTimeConverter();
-            var jsonWriterMock = new JsonWriterMock();
+            var jsonWriterMock = new Mock<JsonWriter>();
 
             //Act
-            unixTimeConverter.WriteJson(jsonWriterMock, new DateTime(1950, 1, 1, 0, 0, 0, DateTimeKind.Utc), null);
+            unixTimeConverter.WriteJson(jsonWriterMock.Object, new DateTime(1950, 1, 1, 0, 0, 0, DateTimeKind.Utc), null);
 
             //Assert
-            Assert.Equal(-631152000, jsonWriterMock.FetchedData);
+            jsonWriterMock.Verify(x => x.WriteValue(-631152000L), Times.Once);
         }
 
         [Fact]
@@ -37,13 +39,13 @@ namespace UnixTimeConverter.Test
         {
             //Arrange
             var unixTimeConverter = new UnixTimeConverter();
-            var jsonWriterMock = new JsonWriterMock();
+            var jsonWriterMock = new Mock<JsonWriter>();
 
             //Act
-            unixTimeConverter.WriteJson(jsonWriterMock, new DateTime(1971, 1, 1, 0, 0, 0, DateTimeKind.Utc), null);
+            unixTimeConverter.WriteJson(jsonWriterMock.Object, new DateTime(1971, 1, 1, 0, 0, 0, DateTimeKind.Utc), null);
 
             //Assert
-            Assert.Equal(31536000, jsonWriterMock.FetchedData);
+            jsonWriterMock.Verify(x => x.WriteValue(31536000L), Times.Once);
         }
 
         [Fact]
@@ -51,13 +53,13 @@ namespace UnixTimeConverter.Test
         {
             //Arrange
             var unixTimeConverter = new UnixTimeConverter();
-            var jsonWriterMock = new JsonWriterMock();
+            var jsonWriterMock = new Mock<JsonWriter>();
 
             //Act
-            unixTimeConverter.WriteJson(jsonWriterMock, new DateTime(2017, 08, 04, 16, 2, 2, DateTimeKind.Utc), null);
+            unixTimeConverter.WriteJson(jsonWriterMock.Object, new DateTime(2017, 08, 04, 16, 2, 2, DateTimeKind.Utc), null);
 
             //Assert
-            Assert.Equal(1501862522, jsonWriterMock.FetchedData);
+            jsonWriterMock.Verify(x => x.WriteValue(1501862522L), Times.Once);
         }
     }
 }
