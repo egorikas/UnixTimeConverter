@@ -10,6 +10,7 @@
     <Copyright>Copyright 2017 (c) Egor Grishechko</Copyright>
     <PackageTags>unixtime unixtimeconverter json unix converter timestamp</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>1.1.2</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
