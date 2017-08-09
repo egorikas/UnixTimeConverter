@@ -1,4 +1,4 @@
-version: 1.0.{build}
+version: 1.1.{build}
 build_script:
 - cmd: >-
     cd src
@@ -8,6 +8,6 @@ build_script:
     dotnet build
 test_script:
 - cmd: >-
-    cd UnixTimeConverter.Test
+    cd JsonNetConverters.Test
     
     dotnet test

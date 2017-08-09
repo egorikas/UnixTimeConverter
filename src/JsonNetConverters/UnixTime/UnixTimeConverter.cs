@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace UnixTimeConverter
+namespace JsonNetConverters.UnixTime
 {
     public class UnixTimeConverter : DateTimeConverterBase
     {

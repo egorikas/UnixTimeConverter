@@ -3,7 +3,7 @@ using Moq;
 using Newtonsoft.Json;
 using Xunit;
 
-namespace UnixTimeConverter.Test
+namespace JsonNetConverters.Test
 {
     public class WriteJsonTest
     {
@@ -11,7 +11,7 @@ namespace UnixTimeConverter.Test
         public void WriteJson_WrongInput_ExceptionThrown()
         {
             //Arrange
-            var unixTimeConverter = new UnixTimeConverter();
+            var unixTimeConverter = new UnixTime.UnixTimeConverter();
 
             //Act
             var ex = Assert.Throws<ArgumentException>(() => unixTimeConverter.WriteJson(null, string.Empty, null));
@@ -24,7 +24,7 @@ namespace UnixTimeConverter.Test
         public void WriteJson_LessThan1970_SuccessResult()
         {
             //Arrange
-            var unixTimeConverter = new UnixTimeConverter();
+            var unixTimeConverter = new UnixTime.UnixTimeConverter();
             var jsonWriterMock = new Mock<JsonWriter>();
 
             //Act
@@ -38,7 +38,7 @@ namespace UnixTimeConverter.Test
         public void WriteJson_MoreThan1970_SuccessResult()
         {
             //Arrange
-            var unixTimeConverter = new UnixTimeConverter();
+            var unixTimeConverter = new UnixTime.UnixTimeConverter();
             var jsonWriterMock = new Mock<JsonWriter>();
 
             //Act
@@ -52,7 +52,7 @@ namespace UnixTimeConverter.Test
         public void WriteJson_FullDate_SuccessResult()
         {
             //Arrange
-            var unixTimeConverter = new UnixTimeConverter();
+            var unixTimeConverter = new UnixTime.UnixTimeConverter();
             var jsonWriterMock = new Mock<JsonWriter>();
 
             //Act
