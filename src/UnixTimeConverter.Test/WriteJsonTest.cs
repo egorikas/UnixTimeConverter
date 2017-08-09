@@ -17,7 +17,7 @@ namespace UnixTimeConverter.Test
             var ex = Assert.Throws<ArgumentException>(() => unixTimeConverter.WriteJson(null, string.Empty, null));
 
             //Assert
-            Assert.Equal(ex.Message, "Expect DateTime as input parameter");
+            Assert.Equal("Expect DateTime as input parameter", ex.Message);
         }
 
         [Fact]

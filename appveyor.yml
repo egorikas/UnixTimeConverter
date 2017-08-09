@@ -1,0 +1,13 @@
+version: 1.0.{build}
+build_script:
+- cmd: >-
+    cd src
+    
+    dotnet restore
+    
+    dotnet build
+test_script:
+- cmd: >-
+    cd UnixTimeConverter.Test
+    
+    dotnet test
