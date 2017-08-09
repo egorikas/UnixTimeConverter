@@ -49,7 +49,7 @@ Then
     dotnet build
 ```
 ## Tests
-Open folder with `Configuraion.Test.csproj` in the shell.
+Open `src\JsonNetConverters.Test` folder in the command prompt.
 Then
 ```
     dotnet test
