@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.0.0
-MinimumVisualStudioVersion = 10.0.0.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnixTimeConverter", "UnixTimeConverter\UnixTimeConverter.csproj", "{DB100CC4-17AB-4757-862F-D861C10FD668}"
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonNetConverters", "UnixTimeConverter\JsonNetConverters.csproj", "{DB100CC4-17AB-4757-862F-D861C10FD668}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnixTimeConverter.Test", "UnixTimeConverter.Test\UnixTimeConverter.Test.csproj", "{A4267FD8-1779-4BD8-8782-4E71A9FBCC82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonNetConverters.Test", "UnixTimeConverter.Test\JsonNetConverters.Test.csproj", "{A4267FD8-1779-4BD8-8782-4E71A9FBCC82}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

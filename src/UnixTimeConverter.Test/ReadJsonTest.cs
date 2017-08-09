@@ -4,7 +4,7 @@ using Newtonsoft.Json;
 using UnixTimeConverter.Test.Helpers;
 using Xunit;
 
-namespace UnixTimeConverter.Test
+namespace JsonNetConverters.Test
 {
     public class ReadJsonTest
     {
@@ -12,7 +12,7 @@ namespace UnixTimeConverter.Test
         public void WriteJson_InvalidTokenType_ExceptionThrown()
         {
             //Arrange
-            var unixTimeConverter = new UnixTimeConverter();
+            var unixTimeConverter = new UnixTime.UnixTimeConverter();
             var jsonReaderMock = new Mock<JsonReader>();
             jsonReaderMock.SetupGet(x => x.TokenType).Returns(JsonToken.Boolean);
 
@@ -28,7 +28,7 @@ namespace UnixTimeConverter.Test
         public void WriteJson_InvalidString_ExceptionThrown()
         {
             //Arrange
-            var unixTimeConverter = new UnixTimeConverter();
+            var unixTimeConverter = new UnixTime.UnixTimeConverter();
             var jsonReaderMock = new Mock<JsonReader>();
             jsonReaderMock.SetupGet(x => x.TokenType).Returns(JsonToken.String);
             jsonReaderMock.SetupGet(x => x.Value).Returns("wrongInput");
@@ -46,7 +46,7 @@ namespace UnixTimeConverter.Test
         public void WriteJson_ValidPositiveInput_Success(JsonToken jsonTokenType, object input, DateTime expectedResult)
         {
             //Arrange
-            var unixTimeConverter = new UnixTimeConverter();
+            var unixTimeConverter = new UnixTime.UnixTimeConverter();
             var jsonReaderMock = new Mock<JsonReader>();
             jsonReaderMock.SetupGet(x => x.TokenType).Returns(jsonTokenType);
             jsonReaderMock.SetupGet(x => x.Value).Returns(input);
