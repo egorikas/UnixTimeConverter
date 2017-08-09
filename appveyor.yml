@@ -8,6 +8,6 @@ build_script:
     dotnet build
 test_script:
 - cmd: >-
-    cd UnixTimeConverter.Test
+    cd JsonNetConverters.Test
     
     dotnet test
