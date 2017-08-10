@@ -3,7 +3,7 @@
 [![NuGet](https://img.shields.io/nuget/v/UnixTimeConverter.svg)](https://www.nuget.org/packages/UnixTimeConverter)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
-Unix Time Stamp to .NET DateTime converter for Json.NET.
+Unix Time Stamp to .NET DateTime converter for Json.NET
 
 ## Installation
 
@@ -32,7 +32,7 @@ namespace UsageExample
             var result = JsonConvert.DeserializeObject<ApiData>(apiJson);
 
             //Assert
-            Assert.Equal(new DateTime(2011, 11, 11, 11, 11, 11, DateTimeKind.Utc), result);
+            Assert.Equal(new DateTime(2011, 11, 11, 11, 11, 11, DateTimeKind.Utc), result.Date);
         }
     }
 }
