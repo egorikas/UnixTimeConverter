@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard1.3</TargetFramework>
-    <PackageId>JsonNetConverters.UnixTime</PackageId>
+    <PackageId>UnixTimeConverter</PackageId>
     <PackageVersion>1.2.0</PackageVersion>
     <Authors>Egor Grishechko</Authors>
     <Summary>Unix time stamp converter for Json.NET</Summary>
