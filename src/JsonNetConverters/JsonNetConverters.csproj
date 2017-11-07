@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
+    <TargetFramework>netstandard1.0</TargetFramework>
     <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>    
     <PackageId>UnixTimeConverter</PackageId>
     <PackageVersion>1.2.0</PackageVersion>
@@ -8,7 +8,7 @@
     <Summary>Unix time stamp converter for Json.NET</Summary>
     <Description>Unix timestamp converter for Json.NET</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageReleaseNotes>First release</PackageReleaseNotes>
+    <PackageReleaseNotes>Switch to .NET Standard 1.0</PackageReleaseNotes>
     <Copyright>Copyright 2017 (c) Egor Grishechko</Copyright>
     <PackageTags>unixtime unixtimeconverter json unix converter timestamp</PackageTags>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
@@ -16,6 +16,8 @@
     <PackageProjectUrl>https://github.com/egorikas/UnixTimeConverter</PackageProjectUrl>
     <RepositoryUrl></RepositoryUrl>
     <PackageLicenseUrl>https://github.com/egorikas/UnixTimeConverter/blob/master/LICENSE</PackageLicenseUrl>
+    <AssemblyVersion>1.3.0.0</AssemblyVersion>
+    <FileVersion>1.3.0.0</FileVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="10.0.1" />
