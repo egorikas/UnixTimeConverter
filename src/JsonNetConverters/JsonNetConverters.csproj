@@ -3,7 +3,7 @@
     <TargetFramework>netstandard1.0</TargetFramework>
     <NetStandardImplicitPackageVersion>1.6.0</NetStandardImplicitPackageVersion>    
     <PackageId>UnixTimeConverter</PackageId>
-    <PackageVersion>1.2.0</PackageVersion>
+    <PackageVersion>1.3.0</PackageVersion>
     <Authors>Egor Grishechko</Authors>
     <Summary>Unix time stamp converter for Json.NET</Summary>
     <Description>Unix timestamp converter for Json.NET</Description>
