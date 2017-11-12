@@ -56,7 +56,7 @@ Then
 ```
 
 ## .NET Standart compatibility
-Library was created with supporting for **.NET Standart 1.3**
+Library was created with supporting for **.NET Standart 1.0**
 
 ## Contributing
 Don't be shy to ask a question or offer something :)
